@@ -1,5 +1,7 @@
 # Tip4deepMD-kit
+
 Tips 4 installing deepMD-kit on GPU workstation. This is not a thorough installation guidance. Just some tips for some possible issues.
+
 (tensorflow-1.14.0, CUDA-10.0 cuDNN-7.6, bazel-0.25.2)
 (Note: somehow the tensorflow installed by Conda has an issue, here we use pip)
 https://github.com/deepmodeling/deepmd-kit
@@ -35,14 +37,17 @@ See the github of deepMD-kit to learn how to test if tensorflow-python is instal
 Install tensorflow-gpu c++ interface: 
 (Note: the versions of tensorflow with python and C++ must be the same)
 Install bazel-0.25.2 (check if the bazel works with tensorflow you want: 0.15.0 works with 1.12.0 and 0.25.2 works with 1.14.0, it is a trick thing; you may need to install javac to install bazel, see install tutorial of deepMD-kit)
+
 download tensorflow from github:
 git clone https://github.com/tensorflow/tensorflow tensorflow -b v1.14.0 --depth=1 (1.14.0 is the version we used)
+
 configure tensorflow installation: ./configure
-Note:select right python and library if there are multiple pythons on the workstation
+Note:select right python and library if there are multiple pythons on the workstation.
 Select "Y" when asked if tensorflow with CUDA support.
-Identify the locations of CUDA toolkit and cuDNN if they are not installed in the default places
-Do not select clang as CUDA compiler
+Identify the locations of CUDA toolkit and cuDNN if they are not installed in the default places.
+Do not select clang as CUDA compiler.
 If you have a very new gcc, be careful because it may not be compatible with CUDA, then select /usr/bin/gcc, usually this is a low version. 
+
 Use bazel to compile tensorflow (this is a very long process, be patient)
 Tip: you may need add this to WORKSPACE if bazel does not work. 
 http_archive(
