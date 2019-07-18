@@ -29,6 +29,7 @@ source venv/bin/activate (activate the virtual environment, keep the virtual env
 deactivate (shutdown the virtual environment)
 
 Install tensorflow-gpu python interface:
+
 pip install update pip (update pip before install tensorflow)
 pip install update tensorflow-gpu==1.14.0 (This will install tensorflow gpu 1.14.0 with the current virtual environment and update the other necessary python packages)
 See the github of deepMD-kit to learn how to test if tensorflow-python is installed properly
